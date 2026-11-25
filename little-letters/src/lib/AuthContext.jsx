@@ -60,7 +60,7 @@ export function AuthProvider({ children }) {
     return () => {
       active = false;
     };
-  }, [session?.access_token, attempt]);
+  }, [session, attempt]);
 
   async function logout() {
     // Remove the device registration before dropping its authenticated session.
