@@ -1,0 +1,104 @@
+@import "@fontsource/caveat/400.css";
+@import "@fontsource/caveat/500.css";
+@import "@fontsource/lora/400.css";
+@import "@fontsource/lora/400-italic.css";
+@import "@fontsource/lora/600.css";
+@import "@fontsource/plus-jakarta-sans/400.css";
+@import "@fontsource/plus-jakarta-sans/500.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 42 50% 96%;
+    --paper: 48 100% 98%;
+    --ink: 21 14% 28%;
+    --ink-soft: 21 12% 38%;
+    --blush: 349 49% 85%;
+    --blush-deep: 349 33% 55%;
+    --sage: 100 18% 74%;
+    --butter: 47 75% 81%;
+    --hairline: 36 29% 87%;
+    --muted: 40 28% 93%;
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply m-0 bg-background font-ui text-ink antialiased;
+  }
+  ::selection {
+    background: hsl(var(--butter));
+    color: hsl(var(--ink));
+  }
+  :focus-visible {
+    outline: 2px solid hsl(var(--ink) / 0.55);
+    outline-offset: 3px;
+  }
+  button,
+  a,
+  input,
+  textarea {
+    -webkit-tap-highlight-color: transparent;
+  }
+  button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+}
+@layer components {
+  .btn {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full border border-hairline bg-paper px-4 py-2 font-ui text-[13px] text-ink transition-colors hover:bg-muted;
+  }
+  .btn-dark {
+    @apply btn border-ink bg-ink text-paper hover:bg-ink/90;
+  }
+  .field {
+    @apply w-full rounded-lg border border-hairline bg-paper px-3.5 py-2.5 font-ui text-[16px] text-ink placeholder:text-ink-soft/60;
+  }
+  .field-label {
+    @apply mb-1.5 block font-ui text-[12px] text-ink-soft;
+  }
+  .panel {
+    @apply rounded-xl border border-hairline bg-paper px-5 py-5 shadow-paper;
+  }
+}
+@layer utilities {
+  .shadow-paper {
+    box-shadow:
+      0 8px 30px rgba(81, 68, 61, 0.08),
+      0 1px 0 rgba(255, 255, 255, 0.8) inset;
+  }
+  .shadow-paper-lg {
+    box-shadow:
+      0 18px 50px rgba(81, 68, 61, 0.13),
+      0 1px 0 rgba(255, 255, 255, 0.8) inset;
+  }
+  .paper-grain {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='140' height='140' filter='url(%23n)' opacity='0.04'/></svg>");
+  }
+  .washi {
+    background-image: repeating-linear-gradient(
+      45deg,
+      hsl(var(--blush) / 0.85) 0 7px,
+      hsl(var(--blush) / 0.55) 7px 14px
+    );
+  }
+  .safe-b {
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+  }
+  .safe-t {
+    padding-top: max(1.75rem, env(safe-area-inset-top));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

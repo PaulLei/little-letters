@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#FAF7F0" />
+    <title>Little Letters</title>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100dvh;
+        display: grid;
+        place-items: center;
+        background: #faf7f0;
+        color: #51443d;
+        font:
+          18px Georgia,
+          serif;
+        text-align: center;
+      }
+      main {
+        max-width: 300px;
+        padding: 28px;
+      }
+      img {
+        width: 88px;
+      }
+      p {
+        line-height: 1.65;
+      }
+      button {
+        padding: 12px 24px;
+        border: 1px solid #e8dcc8;
+        border-radius: 30px;
+        background: #fffdf7;
+        color: #51443d;
+        font: 14px system-ui;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img src="/icons/icon-192.png" alt="" />
+      <h1>Little Letters</h1>
+      <p>You’re offline. Reconnect to open your private mailbox.</p>
+      <button onclick="location.reload()">Try again</button>
+    </main>
+  </body>
+</html>

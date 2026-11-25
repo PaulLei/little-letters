@@ -1,0 +1,44 @@
+{
+  "name": "little-letters",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env.local scripts/dev.mjs",
+    "dev:ui": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node --test tests/*.test.mjs",
+    "check": "npm test && npm run build",
+    "push:keys": "node scripts/push-keys.mjs",
+    "test:ui": "playwright test",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@fontsource/caveat": "5.3.0",
+    "@fontsource/lora": "5.3.0",
+    "@fontsource/plus-jakarta-sans": "5.3.0",
+    "@supabase/supabase-js": "2.119.2",
+    "framer-motion": "14.14.0",
+    "lucide-react": "1.79.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-markdown": "10.1.0",
+    "react-router-dom": "7.18.7",
+    "web-push": "4.0.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.6.0",
+    "@playwright/test": "1.65.1",
+    "@vitejs/plugin-react": "6.3.0",
+    "autoprefixer": "10.7.0",
+    "postcss": "8.5.33",
+    "prettier": "3.10.1",
+    "tailwindcss": "3.4.19",
+    "vite": "8.3.8"
+  }
+}
